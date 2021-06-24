@@ -43,7 +43,7 @@ router.post('/', (req, res) => {
       token: token
     });
   } else {
-      res.json({ mensaje: "Usuario o contraseña incorrectos"})
+      res.status(401).json({ mensaje: "Usuario o contraseña incorrectos"})
   }
 })
 

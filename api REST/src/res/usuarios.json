@@ -1,19 +1,19 @@
 [
   {
     "id": 1,
-    "nickname": "pepe",
+    "nick_name": "pepe",
     "password": "contraseña1",
     "subscrito": false
   },
   {
     "id": 2,
-    "nickname": "hugo",
+    "nick_name": "hugo",
     "password": "contraseña2",
     "subscrito": true
   },
   {
     "id": 3,
-    "nickname": "manolo",
+    "nick_name": "manolo",
     "password": "contraseña3",
     "subscrito": true
   }

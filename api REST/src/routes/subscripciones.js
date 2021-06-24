@@ -9,7 +9,7 @@ const NO_USER = "El nombre indicado no existe";
  * @return número de susbscripciones actualmente
  */
 router.get('/', (req, res) => {
-  res.json({"numUsuarios ": getNumUsuariosSubscritos()});
+  res.status(200).json({"numUsuarios ": getNumUsuariosSubscritos()});
 })
 
 /**
@@ -25,7 +25,7 @@ router.get('/', (req, res) => {
   console.log(arrayRespuesta[0]);
 
   if(arrayRespuesta) {
-    res.json({'nicknameUsuario': arrayRespuesta[0].nickname});
+    res.status(200).json({'nicknameUsuario': arrayRespuesta[0].nickname});
   } else  {
     res.status(400).json({respuesta: NO_USER});
   }
@@ -45,7 +45,7 @@ router.get('/', (req, res) => {
   if(arrayRespuesta) {
     let pos = usuarios.indexOf(arrayRespuesta[0]);
     usuarios[pos].subscrito = subscripcion;
-    res.json({
+    res.status(200).json({
       'nicknameUsuario': arrayRespuesta[0].nickname,
       'subscripcionUsuario': subscripcion
     });

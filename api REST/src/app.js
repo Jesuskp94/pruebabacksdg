@@ -18,30 +18,31 @@ app.set('llave', config.llave);
 
 //Middleware
 app.use(morgan('dev'));
-
-  //Middleware para permitir o denegar el acceso a las rutas que no queremos que se acceda indebidamente
-  const rutasProtegidas = express.Router(); 
-
-  rutasProtegidas.use((req, res, next) => {
-      const token = req.headers['access-token'];
-
-      if (token) {
-        jwt.verify(token, app.get('llave'), (err, decoded) => {      
-          if (err) {
-            return res.json({ mensaje: 'Token inválida' });    
-          } else {
-            req.decoded = decoded;    
-            next();
-          }
-        });
-      } else {
-        res.send({ 
-            mensaje: 'Token no proveída.' 
-        });
-      }
-  });
-
 app.use(express.json());
+
+//Middleware para permitir o denegar el acceso a las rutas que no queremos que se acceda indebidamente
+const rutasProtegidas = express.Router(); 
+
+rutasProtegidas.use((req, res, next) => {
+    const token = req.headers['access-token'];
+
+    if (token) {
+      jwt.verify(token, app.get('llave'), (err, decoded) => {      
+        if (err) {
+          return res.json({ mensaje: 'Token inválida' });    
+        } else {
+          req.decoded = decoded;    
+          next();
+        }
+      });
+    } else {
+      res.status(403).send({ 
+          mensaje: 'Token no proveída.' 
+      });
+    }
+});
+
+
 
 
 //Rutas
