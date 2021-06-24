@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "nickname": "pepe",
+    "password": "contraseña1",
+    "subscrito": false
+  },
+  {
+    "id": 2,
+    "nickname": "hugo",
+    "password": "contraseña2",
+    "subscrito": true
+  },
+  {
+    "id": 3,
+    "nickname": "manolo",
+    "password": "contraseña3",
+    "subscrito": true
+  }
+]
