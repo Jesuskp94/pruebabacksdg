@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Prueba back SDG</string>
+    <string name="anotarse">Anotarse</string>
+    <string name="desanotarse">Desanotarse</string>
+</resources>
