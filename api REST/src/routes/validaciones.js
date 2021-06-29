@@ -23,7 +23,7 @@ router.post('/', (req, res) => {
   var validacion = false;
 
   usuarios.forEach((usuario) => {
-    if(usuarioCliente === usuario.nickname && contrasenaCliente === usuario.password) {
+    if(usuarioCliente === usuario.nick_name && contrasenaCliente === usuario.password) {
       validacion = true;
       console.log(validacion);
       return
